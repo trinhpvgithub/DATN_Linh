@@ -31,13 +31,20 @@ namespace DATN_Linh
 		{
 			this.tab_Main = new System.Windows.Forms.TabControl();
 			this.tab_TTcot = new System.Windows.Forms.TabPage();
-			this.tab_VL = new System.Windows.Forms.TabPage();
-			this.tab_TT = new System.Windows.Forms.TabPage();
-			this.label1 = new System.Windows.Forms.Label();
-			this.txt_pathTT = new System.Windows.Forms.TextBox();
-			this.btn_pathTT = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dgv_txt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_N = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_Q = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btn_nhap = new System.Windows.Forms.Button();
+			this.btn_pathTT = new System.Windows.Forms.Button();
+			this.txt_pathTT = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.tab_VL = new System.Windows.Forms.TabPage();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.txt_Rswdai = new System.Windows.Forms.TextBox();
@@ -64,6 +71,7 @@ namespace DATN_Linh
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.txt_Rn = new System.Windows.Forms.TextBox();
 			this.txt_Rbt = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
@@ -75,37 +83,29 @@ namespace DATN_Linh
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
-			this.dgv_txt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_N = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_Q = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label23 = new System.Windows.Forms.Label();
-			this.txt_cover = new System.Windows.Forms.TextBox();
-			this.label24 = new System.Windows.Forms.Label();
+			this.tab_TT = new System.Windows.Forms.TabPage();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.btn_TT = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btn_TT = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.txt_cover = new System.Windows.Forms.TextBox();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label23 = new System.Windows.Forms.Label();
 			this.tab_Main.SuspendLayout();
 			this.tab_TTcot.SuspendLayout();
-			this.tab_VL.SuspendLayout();
-			this.tab_TT.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tab_VL.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.tab_TT.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tab_Main
@@ -121,6 +121,7 @@ namespace DATN_Linh
 			this.tab_Main.SelectedIndex = 0;
 			this.tab_Main.Size = new System.Drawing.Size(879, 513);
 			this.tab_Main.TabIndex = 0;
+			this.tab_Main.SelectedIndexChanged += new System.EventHandler(this.MainForm_Load);
 			// 
 			// tab_TTcot
 			// 
@@ -136,59 +137,6 @@ namespace DATN_Linh
 			this.tab_TTcot.TabIndex = 0;
 			this.tab_TTcot.Text = "Thông tin Cột";
 			this.tab_TTcot.UseVisualStyleBackColor = true;
-			// 
-			// tab_VL
-			// 
-			this.tab_VL.Controls.Add(this.groupBox2);
-			this.tab_VL.Controls.Add(this.groupBox1);
-			this.tab_VL.Location = new System.Drawing.Point(4, 28);
-			this.tab_VL.Name = "tab_VL";
-			this.tab_VL.Padding = new System.Windows.Forms.Padding(3);
-			this.tab_VL.Size = new System.Drawing.Size(871, 481);
-			this.tab_VL.TabIndex = 1;
-			this.tab_VL.Text = "Cài đặt Vật Liệu";
-			this.tab_VL.UseVisualStyleBackColor = true;
-			// 
-			// tab_TT
-			// 
-			this.tab_TT.Controls.Add(this.pictureBox2);
-			this.tab_TT.Controls.Add(this.btn_TT);
-			this.tab_TT.Controls.Add(this.dataGridView2);
-			this.tab_TT.Controls.Add(this.txt_cover);
-			this.tab_TT.Controls.Add(this.label24);
-			this.tab_TT.Controls.Add(this.label23);
-			this.tab_TT.Location = new System.Drawing.Point(4, 28);
-			this.tab_TT.Name = "tab_TT";
-			this.tab_TT.Padding = new System.Windows.Forms.Padding(3);
-			this.tab_TT.Size = new System.Drawing.Size(871, 481);
-			this.tab_TT.TabIndex = 2;
-			this.tab_TT.Text = "Tính Toán";
-			this.tab_TT.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 19);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "File thông tin";
-			// 
-			// txt_pathTT
-			// 
-			this.txt_pathTT.Location = new System.Drawing.Point(112, 9);
-			this.txt_pathTT.Name = "txt_pathTT";
-			this.txt_pathTT.Size = new System.Drawing.Size(438, 27);
-			this.txt_pathTT.TabIndex = 1;
-			// 
-			// btn_pathTT
-			// 
-			this.btn_pathTT.Location = new System.Drawing.Point(556, 9);
-			this.btn_pathTT.Name = "btn_pathTT";
-			this.btn_pathTT.Size = new System.Drawing.Size(58, 27);
-			this.btn_pathTT.TabIndex = 2;
-			this.btn_pathTT.Text = "...";
-			this.btn_pathTT.UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
 			// 
@@ -212,6 +160,70 @@ namespace DATN_Linh
 			this.dataGridView1.Size = new System.Drawing.Size(851, 416);
 			this.dataGridView1.TabIndex = 3;
 			// 
+			// dgv_txt_id
+			// 
+			this.dgv_txt_id.HeaderText = "ID";
+			this.dgv_txt_id.MinimumWidth = 6;
+			this.dgv_txt_id.Name = "dgv_txt_id";
+			this.dgv_txt_id.ReadOnly = true;
+			this.dgv_txt_id.Width = 40;
+			// 
+			// dgv_name
+			// 
+			this.dgv_name.HeaderText = "Name";
+			this.dgv_name.MinimumWidth = 6;
+			this.dgv_name.Name = "dgv_name";
+			this.dgv_name.ReadOnly = true;
+			this.dgv_name.Width = 125;
+			// 
+			// dgv_M
+			// 
+			this.dgv_M.HeaderText = "MmaxC";
+			this.dgv_M.MinimumWidth = 6;
+			this.dgv_M.Name = "dgv_M";
+			this.dgv_M.ReadOnly = true;
+			this.dgv_M.Width = 110;
+			// 
+			// dgv_N
+			// 
+			this.dgv_N.HeaderText = "NmaxC";
+			this.dgv_N.MinimumWidth = 6;
+			this.dgv_N.Name = "dgv_N";
+			this.dgv_N.ReadOnly = true;
+			this.dgv_N.Width = 110;
+			// 
+			// dgv_Q
+			// 
+			this.dgv_Q.HeaderText = "QmaxC";
+			this.dgv_Q.MinimumWidth = 6;
+			this.dgv_Q.Name = "dgv_Q";
+			this.dgv_Q.ReadOnly = true;
+			this.dgv_Q.Width = 110;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "MmaxD";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 110;
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "NmaxD";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 110;
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "QmaxD";
+			this.Column3.MinimumWidth = 6;
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Width = 110;
+			// 
 			// btn_nhap
 			// 
 			this.btn_nhap.Location = new System.Drawing.Point(620, 9);
@@ -220,6 +232,44 @@ namespace DATN_Linh
 			this.btn_nhap.TabIndex = 2;
 			this.btn_nhap.Text = "OK";
 			this.btn_nhap.UseVisualStyleBackColor = true;
+			// 
+			// btn_pathTT
+			// 
+			this.btn_pathTT.Location = new System.Drawing.Point(556, 9);
+			this.btn_pathTT.Name = "btn_pathTT";
+			this.btn_pathTT.Size = new System.Drawing.Size(58, 27);
+			this.btn_pathTT.TabIndex = 2;
+			this.btn_pathTT.Text = "...";
+			this.btn_pathTT.UseVisualStyleBackColor = true;
+			// 
+			// txt_pathTT
+			// 
+			this.txt_pathTT.Location = new System.Drawing.Point(112, 9);
+			this.txt_pathTT.Name = "txt_pathTT";
+			this.txt_pathTT.Size = new System.Drawing.Size(438, 27);
+			this.txt_pathTT.TabIndex = 1;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 12);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(100, 19);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "File thông tin";
+			// 
+			// tab_VL
+			// 
+			this.tab_VL.Controls.Add(this.groupBox2);
+			this.tab_VL.Controls.Add(this.groupBox1);
+			this.tab_VL.Location = new System.Drawing.Point(4, 28);
+			this.tab_VL.Name = "tab_VL";
+			this.tab_VL.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_VL.Size = new System.Drawing.Size(871, 481);
+			this.tab_VL.TabIndex = 1;
+			this.tab_VL.Text = "Cài đặt Vật Liệu";
+			this.tab_VL.UseVisualStyleBackColor = true;
+			this.tab_VL.Click += new System.EventHandler(this.MainForm_Load);
 			// 
 			// groupBox2
 			// 
@@ -329,6 +379,7 @@ namespace DATN_Linh
 			this.cbb_dai.Size = new System.Drawing.Size(236, 27);
 			this.cbb_dai.TabIndex = 10;
 			this.cbb_dai.Text = "CB240-T";
+			this.cbb_dai.SelectedIndexChanged += new System.EventHandler(this.cbb_dai_SelectedIndexChanged);
 			// 
 			// label18
 			// 
@@ -463,6 +514,7 @@ namespace DATN_Linh
 			this.cbb_chu.Size = new System.Drawing.Size(236, 27);
 			this.cbb_chu.TabIndex = 10;
 			this.cbb_chu.Text = "CB300-V";
+			this.cbb_chu.SelectedIndexChanged += new System.EventHandler(this.cbb_chu_SelectedIndexChanged);
 			// 
 			// label11
 			// 
@@ -527,6 +579,16 @@ namespace DATN_Linh
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Mác Bê Tông";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::DATN_Linh.Properties.Resources.vat_lieu_xay_dung_gom_nhung_gi_13;
+			this.pictureBox1.Location = new System.Drawing.Point(21, 163);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(484, 301);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 3;
+			this.pictureBox1.TabStop = false;
 			// 
 			// txt_Rn
 			// 
@@ -602,6 +664,7 @@ namespace DATN_Linh
 			this.cbb_macbtong.Size = new System.Drawing.Size(236, 27);
 			this.cbb_macbtong.TabIndex = 1;
 			this.cbb_macbtong.Text = "B25";
+			this.cbb_macbtong.SelectedIndexChanged += new System.EventHandler(this.cbb_macbtong_SelectedIndexChanged);
 			// 
 			// label4
 			// 
@@ -643,94 +706,40 @@ namespace DATN_Linh
 			this.label22.TabIndex = 0;
 			this.label22.Text = "Loại";
 			// 
-			// dgv_txt_id
+			// tab_TT
 			// 
-			this.dgv_txt_id.HeaderText = "ID";
-			this.dgv_txt_id.MinimumWidth = 6;
-			this.dgv_txt_id.Name = "dgv_txt_id";
-			this.dgv_txt_id.ReadOnly = true;
-			this.dgv_txt_id.Width = 40;
+			this.tab_TT.Controls.Add(this.pictureBox2);
+			this.tab_TT.Controls.Add(this.btn_TT);
+			this.tab_TT.Controls.Add(this.dataGridView2);
+			this.tab_TT.Controls.Add(this.txt_cover);
+			this.tab_TT.Controls.Add(this.label24);
+			this.tab_TT.Controls.Add(this.label23);
+			this.tab_TT.Location = new System.Drawing.Point(4, 28);
+			this.tab_TT.Name = "tab_TT";
+			this.tab_TT.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_TT.Size = new System.Drawing.Size(871, 481);
+			this.tab_TT.TabIndex = 2;
+			this.tab_TT.Text = "Tính Toán";
+			this.tab_TT.UseVisualStyleBackColor = true;
 			// 
-			// dgv_name
+			// pictureBox2
 			// 
-			this.dgv_name.HeaderText = "Name";
-			this.dgv_name.MinimumWidth = 6;
-			this.dgv_name.Name = "dgv_name";
-			this.dgv_name.ReadOnly = true;
+			this.pictureBox2.Image = global::DATN_Linh.Properties.Resources.Screenshot_2025_07_06_091725;
+			this.pictureBox2.Location = new System.Drawing.Point(441, 48);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(424, 426);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 4;
+			this.pictureBox2.TabStop = false;
 			// 
-			// dgv_M
+			// btn_TT
 			// 
-			this.dgv_M.HeaderText = "MmaxC";
-			this.dgv_M.MinimumWidth = 6;
-			this.dgv_M.Name = "dgv_M";
-			this.dgv_M.ReadOnly = true;
-			this.dgv_M.Width = 110;
-			// 
-			// dgv_N
-			// 
-			this.dgv_N.HeaderText = "NmaxC";
-			this.dgv_N.MinimumWidth = 6;
-			this.dgv_N.Name = "dgv_N";
-			this.dgv_N.ReadOnly = true;
-			this.dgv_N.Width = 110;
-			// 
-			// dgv_Q
-			// 
-			this.dgv_Q.HeaderText = "QmaxC";
-			this.dgv_Q.MinimumWidth = 6;
-			this.dgv_Q.Name = "dgv_Q";
-			this.dgv_Q.ReadOnly = true;
-			this.dgv_Q.Width = 110;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "MmaxD";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 110;
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "NmaxD";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Width = 110;
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "QmaxD";
-			this.Column3.MinimumWidth = 6;
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			this.Column3.Width = 110;
-			// 
-			// label23
-			// 
-			this.label23.AutoSize = true;
-			this.label23.Location = new System.Drawing.Point(6, 18);
-			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(83, 19);
-			this.label23.TabIndex = 0;
-			this.label23.Text = "Lớp bảo vệ";
-			// 
-			// txt_cover
-			// 
-			this.txt_cover.Location = new System.Drawing.Point(95, 15);
-			this.txt_cover.Name = "txt_cover";
-			this.txt_cover.Size = new System.Drawing.Size(147, 27);
-			this.txt_cover.TabIndex = 1;
-			this.txt_cover.Text = "30";
-			// 
-			// label24
-			// 
-			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(248, 18);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(35, 19);
-			this.label24.TabIndex = 0;
-			this.label24.Text = "mm";
+			this.btn_TT.Location = new System.Drawing.Point(308, 15);
+			this.btn_TT.Name = "btn_TT";
+			this.btn_TT.Size = new System.Drawing.Size(82, 26);
+			this.btn_TT.TabIndex = 3;
+			this.btn_TT.Text = "Tính";
+			this.btn_TT.UseVisualStyleBackColor = true;
 			// 
 			// dataGridView2
 			// 
@@ -764,6 +773,7 @@ namespace DATN_Linh
 			this.Column5.MinimumWidth = 6;
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
+			this.Column5.Width = 125;
 			// 
 			// Column6
 			// 
@@ -781,34 +791,31 @@ namespace DATN_Linh
 			this.Column7.ReadOnly = true;
 			this.Column7.Width = 110;
 			// 
-			// btn_TT
+			// txt_cover
 			// 
-			this.btn_TT.Location = new System.Drawing.Point(314, 15);
-			this.btn_TT.Name = "btn_TT";
-			this.btn_TT.Size = new System.Drawing.Size(82, 26);
-			this.btn_TT.TabIndex = 3;
-			this.btn_TT.Text = "Tính";
-			this.btn_TT.UseVisualStyleBackColor = true;
+			this.txt_cover.Location = new System.Drawing.Point(95, 15);
+			this.txt_cover.Name = "txt_cover";
+			this.txt_cover.Size = new System.Drawing.Size(147, 27);
+			this.txt_cover.TabIndex = 1;
+			this.txt_cover.Text = "30";
 			// 
-			// pictureBox1
+			// label24
 			// 
-			this.pictureBox1.Image = global::DATN_Linh.Properties.Resources.vat_lieu_xay_dung_gom_nhung_gi_13;
-			this.pictureBox1.Location = new System.Drawing.Point(21, 163);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(484, 301);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 3;
-			this.pictureBox1.TabStop = false;
+			this.label24.AutoSize = true;
+			this.label24.Location = new System.Drawing.Point(248, 18);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(35, 19);
+			this.label24.TabIndex = 0;
+			this.label24.Text = "mm";
 			// 
-			// pictureBox2
+			// label23
 			// 
-			this.pictureBox2.Image = global::DATN_Linh.Properties.Resources.Screenshot_2025_07_06_091725;
-			this.pictureBox2.Location = new System.Drawing.Point(441, 48);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(424, 426);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 4;
-			this.pictureBox2.TabStop = false;
+			this.label23.AutoSize = true;
+			this.label23.Location = new System.Drawing.Point(6, 18);
+			this.label23.Name = "label23";
+			this.label23.Size = new System.Drawing.Size(83, 19);
+			this.label23.TabIndex = 0;
+			this.label23.Text = "Lớp bảo vệ";
 			// 
 			// MainForm
 			// 
@@ -824,10 +831,8 @@ namespace DATN_Linh
 			this.tab_Main.ResumeLayout(false);
 			this.tab_TTcot.ResumeLayout(false);
 			this.tab_TTcot.PerformLayout();
-			this.tab_VL.ResumeLayout(false);
-			this.tab_TT.ResumeLayout(false);
-			this.tab_TT.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.tab_VL.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
@@ -835,9 +840,11 @@ namespace DATN_Linh
 			this.groupBox3.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.tab_TT.ResumeLayout(false);
+			this.tab_TT.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 
 		}
