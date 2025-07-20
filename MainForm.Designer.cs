@@ -31,15 +31,7 @@ namespace DATN_Linh
 		{
 			this.tab_Main = new System.Windows.Forms.TabControl();
 			this.tab_TTcot = new System.Windows.Forms.TabPage();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dgv_txt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_N = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dgv_Q = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_frames = new System.Windows.Forms.DataGridView();
 			this.btn_nhap = new System.Windows.Forms.Button();
 			this.btn_pathTT = new System.Windows.Forms.Button();
 			this.txt_pathTT = new System.Windows.Forms.TextBox();
@@ -94,9 +86,17 @@ namespace DATN_Linh
 			this.txt_cover = new System.Windows.Forms.TextBox();
 			this.label24 = new System.Windows.Forms.Label();
 			this.label23 = new System.Windows.Forms.Label();
+			this.dgv_txt_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_M = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_N = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgv_Q = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tab_Main.SuspendLayout();
 			this.tab_TTcot.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_frames)).BeginInit();
 			this.tab_VL.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox4.SuspendLayout();
@@ -125,7 +125,7 @@ namespace DATN_Linh
 			// 
 			// tab_TTcot
 			// 
-			this.tab_TTcot.Controls.Add(this.dataGridView1);
+			this.tab_TTcot.Controls.Add(this.dgv_frames);
 			this.tab_TTcot.Controls.Add(this.btn_nhap);
 			this.tab_TTcot.Controls.Add(this.btn_pathTT);
 			this.tab_TTcot.Controls.Add(this.txt_pathTT);
@@ -138,12 +138,12 @@ namespace DATN_Linh
 			this.tab_TTcot.Text = "Thông tin Cột";
 			this.tab_TTcot.UseVisualStyleBackColor = true;
 			// 
-			// dataGridView1
+			// dgv_frames
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgv_frames.AllowUserToAddRows = false;
+			this.dgv_frames.AllowUserToDeleteRows = false;
+			this.dgv_frames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_frames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_txt_id,
             this.dgv_name,
             this.dgv_M,
@@ -152,77 +152,13 @@ namespace DATN_Linh
             this.Column1,
             this.Column2,
             this.Column3});
-			this.dataGridView1.Location = new System.Drawing.Point(10, 59);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(851, 416);
-			this.dataGridView1.TabIndex = 3;
-			// 
-			// dgv_txt_id
-			// 
-			this.dgv_txt_id.HeaderText = "ID";
-			this.dgv_txt_id.MinimumWidth = 6;
-			this.dgv_txt_id.Name = "dgv_txt_id";
-			this.dgv_txt_id.ReadOnly = true;
-			this.dgv_txt_id.Width = 40;
-			// 
-			// dgv_name
-			// 
-			this.dgv_name.HeaderText = "Name";
-			this.dgv_name.MinimumWidth = 6;
-			this.dgv_name.Name = "dgv_name";
-			this.dgv_name.ReadOnly = true;
-			this.dgv_name.Width = 125;
-			// 
-			// dgv_M
-			// 
-			this.dgv_M.HeaderText = "MmaxC";
-			this.dgv_M.MinimumWidth = 6;
-			this.dgv_M.Name = "dgv_M";
-			this.dgv_M.ReadOnly = true;
-			this.dgv_M.Width = 110;
-			// 
-			// dgv_N
-			// 
-			this.dgv_N.HeaderText = "NmaxC";
-			this.dgv_N.MinimumWidth = 6;
-			this.dgv_N.Name = "dgv_N";
-			this.dgv_N.ReadOnly = true;
-			this.dgv_N.Width = 110;
-			// 
-			// dgv_Q
-			// 
-			this.dgv_Q.HeaderText = "QmaxC";
-			this.dgv_Q.MinimumWidth = 6;
-			this.dgv_Q.Name = "dgv_Q";
-			this.dgv_Q.ReadOnly = true;
-			this.dgv_Q.Width = 110;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "MmaxD";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Width = 110;
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "NmaxD";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Width = 110;
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "QmaxD";
-			this.Column3.MinimumWidth = 6;
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			this.Column3.Width = 110;
+			this.dgv_frames.Location = new System.Drawing.Point(10, 59);
+			this.dgv_frames.Name = "dgv_frames";
+			this.dgv_frames.ReadOnly = true;
+			this.dgv_frames.RowHeadersWidth = 51;
+			this.dgv_frames.RowTemplate.Height = 24;
+			this.dgv_frames.Size = new System.Drawing.Size(851, 416);
+			this.dgv_frames.TabIndex = 3;
 			// 
 			// btn_nhap
 			// 
@@ -232,6 +168,7 @@ namespace DATN_Linh
 			this.btn_nhap.TabIndex = 2;
 			this.btn_nhap.Text = "OK";
 			this.btn_nhap.UseVisualStyleBackColor = true;
+			this.btn_nhap.Click += new System.EventHandler(this.btn_nhap_Click);
 			// 
 			// btn_pathTT
 			// 
@@ -241,6 +178,7 @@ namespace DATN_Linh
 			this.btn_pathTT.TabIndex = 2;
 			this.btn_pathTT.Text = "...";
 			this.btn_pathTT.UseVisualStyleBackColor = true;
+			this.btn_pathTT.Click += new System.EventHandler(this.btn_pathTT_Click);
 			// 
 			// txt_pathTT
 			// 
@@ -817,6 +755,70 @@ namespace DATN_Linh
 			this.label23.TabIndex = 0;
 			this.label23.Text = "Lớp bảo vệ";
 			// 
+			// dgv_txt_id
+			// 
+			this.dgv_txt_id.HeaderText = "ID";
+			this.dgv_txt_id.MinimumWidth = 6;
+			this.dgv_txt_id.Name = "dgv_txt_id";
+			this.dgv_txt_id.ReadOnly = true;
+			this.dgv_txt_id.Width = 40;
+			// 
+			// dgv_name
+			// 
+			this.dgv_name.HeaderText = "Name";
+			this.dgv_name.MinimumWidth = 6;
+			this.dgv_name.Name = "dgv_name";
+			this.dgv_name.ReadOnly = true;
+			this.dgv_name.Width = 125;
+			// 
+			// dgv_M
+			// 
+			this.dgv_M.HeaderText = "MxC";
+			this.dgv_M.MinimumWidth = 6;
+			this.dgv_M.Name = "dgv_M";
+			this.dgv_M.ReadOnly = true;
+			this.dgv_M.Width = 110;
+			// 
+			// dgv_N
+			// 
+			this.dgv_N.HeaderText = "MyC";
+			this.dgv_N.MinimumWidth = 6;
+			this.dgv_N.Name = "dgv_N";
+			this.dgv_N.ReadOnly = true;
+			this.dgv_N.Width = 110;
+			// 
+			// dgv_Q
+			// 
+			this.dgv_Q.HeaderText = "NC";
+			this.dgv_Q.MinimumWidth = 6;
+			this.dgv_Q.Name = "dgv_Q";
+			this.dgv_Q.ReadOnly = true;
+			this.dgv_Q.Width = 110;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "MxD";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Width = 110;
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "MyD";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Width = 110;
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "ND";
+			this.Column3.MinimumWidth = 6;
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Width = 110;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -831,7 +833,7 @@ namespace DATN_Linh
 			this.tab_Main.ResumeLayout(false);
 			this.tab_TTcot.ResumeLayout(false);
 			this.tab_TTcot.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_frames)).EndInit();
 			this.tab_VL.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
@@ -855,7 +857,7 @@ namespace DATN_Linh
 		private System.Windows.Forms.TabPage tab_TTcot;
 		private System.Windows.Forms.TabPage tab_VL;
 		private System.Windows.Forms.TabPage tab_TT;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgv_frames;
 		private System.Windows.Forms.Button btn_nhap;
 		private System.Windows.Forms.Button btn_pathTT;
 		private System.Windows.Forms.TextBox txt_pathTT;
@@ -898,14 +900,6 @@ namespace DATN_Linh
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_txt_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_name;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_M;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_N;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Q;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Button btn_TT;
 		private System.Windows.Forms.DataGridView dataGridView2;
@@ -916,5 +910,13 @@ namespace DATN_Linh
 		private System.Windows.Forms.TextBox txt_cover;
 		private System.Windows.Forms.Label label24;
 		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_txt_id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_name;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_M;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_N;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dgv_Q;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 	}
 }

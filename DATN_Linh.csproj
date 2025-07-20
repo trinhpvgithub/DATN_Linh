@@ -50,8 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassUtils\Cot.cs" />
     <Compile Include="ClassUtils\MACBT.cs" />
     <Compile Include="ClassUtils\MACTHEP.cs" />
+    <Compile Include="ClassUtils\Matcat.cs" />
+    <Compile Include="ClassUtils\XuLyEx.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,6 @@
 ﻿using DATN_Linh.ClassUtils;
+using MiniExcelLibs;
+using MiniExcelLibs.OpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +69,47 @@ namespace DATN_Linh
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			LoadData();
+		}
+
+		private void btn_pathTT_Click(object sender, EventArgs e)
+		{
+			using (OpenFileDialog ofd = new OpenFileDialog())
+			{
+				ofd.Title = "Chọn file Excel";
+				ofd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+				ofd.Multiselect = false;
+
+				if (ofd.ShowDialog() == DialogResult.OK)
+				{
+					string filePath = ofd.FileName;
+					txt_pathTT.Text = filePath;
+				}
+			}
+		}
+
+		private void btn_nhap_Click(object sender, EventArgs e)
+		{
+			var config = new OpenXmlConfiguration()
+			{
+				FillMergedCells = true
+			};
+			var a = MiniExcel.Query(txt_pathTT.Text, sheetName: "Cot", configuration: config);
+			var b = new XuLyEx(a.ToList());
+			var c = b.Cots;
+			foreach (var item in c)
+			{
+				string[] row = new string[]
+				{   "0",
+					"0",
+					item.MCC.Mx.ToString(),
+					item.MCC.My.ToString(),
+					item.MCC.N.ToString(),
+					item.MCD.Mx.ToString(),
+					item.MCD.My.ToString(),
+					item.MCD.N.ToString(),
+				};
+				dgv_frames.Rows.Add(row);
+			}
 		}
 	}
 }
