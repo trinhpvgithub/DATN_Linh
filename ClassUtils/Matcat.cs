@@ -36,13 +36,14 @@ namespace DATN_Linh.ClassUtils
 			List<double> mymax = GetValue(my);
 			List<double> nmax = GetValue(n);
 			if (mxmax.Count > 0) Mx = mxmax.Max(x => Math.Abs(x));
-			if (mymax.Count > 0) My = mxmax.Max(x => Math.Abs(x));
-			if (nmax.Count > 0) N = mxmax.Max(x => Math.Abs(x));
+			if (mymax.Count > 0) My = mymax.Max(x => Math.Abs(x));
+			if (nmax.Count > 0) N = nmax.Max(x => Math.Abs(x));
 		}
 
 		public List<double> GetValue(dynamic dy)
 		{
 			var result = new List<double>();
+			if (dy == null) return result;
 			if (Convert.ToString(dy.O) != "-" && dy.O != null)
 				result.Add(dy.O);
 			if (Convert.ToString(dy.P) != "-" && dy.P != null)

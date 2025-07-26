@@ -11,12 +11,12 @@ namespace DATN_Linh.ClassUtils
 		public List<Cot> Cots { get; set; } = new List<Cot>();
 		public XuLyEx(List<dynamic> data)
 		{
-			var groupname = data.GroupBy(x => x.E);// group theo giá trị của cột A
+			var groupname = data.GroupBy(x => x.E);// group theo giá trị của cột E
 			foreach (var group in groupname)
 			{
 				var groupbyF = group.Where(x =>
 				  {
-					  var dong = @"{ x.F}";
+					  var dong = $"{ x.F}";
 					  return dong.StartsWith("C");
 				  }).GroupBy(x => x.F).ToList();
 				foreach(var item in groupbyF)

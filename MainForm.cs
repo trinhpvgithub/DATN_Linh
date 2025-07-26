@@ -3,13 +3,10 @@ using MiniExcelLibs;
 using MiniExcelLibs.OpenXml;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace DATN_Linh
 {
@@ -22,6 +19,7 @@ namespace DATN_Linh
 		public static MACBT MACBT { get; set; }
 		public static MACTHEP MACTHEPCHINH { get; set; }
 		public static MACTHEP MACTHEPDAI { get; set; }
+		public static List<Cot> Cots { get; set; } = new List<Cot>();
 		private void cbb_macbtong_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			var mac = cbb_macbtong.Text;
@@ -73,34 +71,39 @@ namespace DATN_Linh
 
 		private void btn_pathTT_Click(object sender, EventArgs e)
 		{
+			var folderPath = "";
+			string a="";
 			using (OpenFileDialog ofd = new OpenFileDialog())
 			{
 				ofd.Title = "Chọn file Excel";
-				ofd.Filter = "Excel Files (*.xlsx)|*.xlsx";
 				ofd.Multiselect = false;
 
 				if (ofd.ShowDialog() == DialogResult.OK)
 				{
 					string filePath = ofd.FileName;
 					txt_pathTT.Text = filePath;
+					folderPath = Path.GetDirectoryName(filePath);
 				}
 			}
 		}
 
 		private void btn_nhap_Click(object sender, EventArgs e)
 		{
+			var tt = MiniExcel.Query<TietDien>(txt_PathTD.Text);
+			var data = tt.Where(x => x.DesignType.Equals("Column")).GroupBy(x => x.Label).ToList();
 			var config = new OpenXmlConfiguration()
 			{
 				FillMergedCells = true
 			};
-			var a = MiniExcel.Query(txt_pathTT.Text, sheetName: "Cot", configuration: config);
+			var a = MiniExcel.Query(txt_pathTT.Text);
 			var b = new XuLyEx(a.ToList());
 			var c = b.Cots;
+			int i = 1;
 			foreach (var item in c)
 			{
 				string[] row = new string[]
-				{   "0",
-					"0",
+				{   i.ToString(),
+					item.Ten,
 					item.MCC.Mx.ToString(),
 					item.MCC.My.ToString(),
 					item.MCC.N.ToString(),
@@ -109,6 +112,67 @@ namespace DATN_Linh
 					item.MCD.N.ToString(),
 				};
 				dgv_frames.Rows.Add(row);
+				i++;
+			}
+			foreach (var cot in c)
+			{
+				var TTT = data.FirstOrDefault(x => x.Key.Equals(cot.Ten));
+				cot.Rong = Split(TTT.FirstOrDefault().AnalysisSection, false);
+				cot.Cao = Split(TTT.FirstOrDefault().AnalysisSection);
+				Cots.Add(cot);
+			}
+		}
+		private double Split(string data, bool c = true)
+		{
+			double result = 0;
+			string[] kq = data.Split('X');
+			if (c)
+			{
+				result = Convert.ToDouble(kq.LastOrDefault()) * 10;
+			}
+			else
+			{
+				result = Convert.ToDouble(kq.FirstOrDefault().Substring(1)) * 10;
+			}
+			return result;
+		}
+		private void btn_TT_Click(object sender, EventArgs e)
+		{
+			var a = Convert.ToDouble(txt_cover.Text);
+			int i = 1;
+			foreach (var cot in Cots)
+			{
+				var Result = new Tinh(MACBT.Rb,
+					MACTHEPCHINH.Rs, MACTHEPCHINH.Rsc,
+					cot.MCC.N, cot.MCC.Mx, cot.MCD.N, cot.MCD.My,
+					cot.Cao, a);
+				string[] beamresult = new string[]
+				{
+					i.ToString(),
+					cot.Ten,
+					Math.Round( Result.As1,4).ToString(),
+					Math.Round( Result.As2,4).ToString(),
+				};
+				dataGridView2.Rows.Add(beamresult);
+				i++;
+			}
+		}
+
+		private void btn_td_Click(object sender, EventArgs e)
+		{
+			var folderPath = "";
+			string a = "";
+			using (OpenFileDialog ofd = new OpenFileDialog())
+			{
+				ofd.Title = "Chọn file Excel";
+				ofd.Multiselect = false;
+
+				if (ofd.ShowDialog() == DialogResult.OK)
+				{
+					string filePath = ofd.FileName;
+					txt_PathTD.Text = filePath;
+					folderPath = Path.GetDirectoryName(filePath);
+				}
 			}
 		}
 	}
