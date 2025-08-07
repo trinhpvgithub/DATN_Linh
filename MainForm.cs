@@ -20,6 +20,7 @@ namespace DATN_Linh
 		public static MACTHEP MACTHEPCHINH { get; set; }
 		public static MACTHEP MACTHEPDAI { get; set; }
 		public static List<Cot> Cots { get; set; } = new List<Cot>();
+		public static List<Tinh> Ketquas { get; set; } = new List<Tinh>();
 		private void cbb_macbtong_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			var mac = cbb_macbtong.Text;
@@ -145,8 +146,9 @@ namespace DATN_Linh
 				var Result = new Tinh(MACBT.Rb,
 					MACTHEPCHINH.Rs, MACTHEPCHINH.Rsc,
 					cot.MCC.N, cot.MCC.Mx, cot.MCD.N, cot.MCD.My,
-					cot.Cao, a);
-				string[] beamresult = new string[]
+					cot.Cao,cot.Rong ,a);
+                Ketquas.Add(Result);
+                string[] beamresult = new string[]
 				{
 					i.ToString(),
 					cot.Ten,
